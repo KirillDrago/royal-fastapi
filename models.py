@@ -12,6 +12,5 @@ class Token(Base):
 
 
 engine = create_engine("sqlite:///tokens_db")
-# engine = create_engine("postgresql://some-postgres:mysecretpassword@localhost/tokens_db")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base.metadata.create_all(bind=engine)
