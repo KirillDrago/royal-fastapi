@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Dialogs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+
+    <p class="text-2xl font-bold mb-4">Chat List</p>
+
+        <table class="min-w-[50%] mb-4">
+            <thead class="border-b text-lg">
+                <tr>
+                  <th class="border">Number</th>
+                  <th class="border">Chat Name</th>
+                  <th class="border">Chat ID</th>
+                </tr>
+              </thead>
+              <tbody class="text-center text-sm" id="table-body">
+                {% for item in data %}
+                <tr>
+                  <td class="border">{{ item.num }}</td>
+                  <td class="border">{{ item.name }}</td>
+                  <td class="border">{{ item.id }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+          <div class="mb-4">
+          <input type="text" class="px-3 py-2 border rounded-sm" id="search-input" placeholder="Enter number of chat">
+          <button class="px-3 py-1 bg-blue-600 text-white ml-4" id="search-button">Search</button>
+            </div>
+    <div>
+        <button style="font-size: 15px; padding: 10px 20px; background-color: red; color: white;" onclick="window.history.back()">Back</button>
+    </div>
+<script>
+  document.getElementById("search-button").addEventListener("click", function() {
+    var searchNumber = document.getElementById("search-input").value;
+    window.location.href += "/" + encodeURIComponent(searchNumber);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Dialogs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+
+    <p class="text-2xl font-bold mb-4">Enter chat name for search</p>
+
+
+          <div class="mb-4">
+          <input type="text" class="px-3 py-2 border rounded-sm" id="search-input" placeholder="Enter search query">
+          <button class="px-3 py-1 bg-blue-600 text-white ml-4" id="search-button">Search</button>
+            </div>
+
+
+<script>
+  document.getElementById("search-button").addEventListener("click", function() {
+    var searchQuery = document.getElementById("search-input").value;
+    window.location.href = "/dialogs/" + encodeURIComponent(searchQuery);
+  });
+</script>
+</body>
+</html>

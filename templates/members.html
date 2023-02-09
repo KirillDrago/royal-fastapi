@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Dialogs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+
+    <p class="text-2xl font-bold mb-4">Chat List</p>
+
+        <table class="min-w-[50%] mb-4">
+            <thead class="border-b text-lg">
+                <tr>
+                  <th class="border">Name</th>
+                  <th class="border">Username</th>
+                </tr>
+              </thead>
+              <tbody class="text-center text-sm" id="table-body">
+                {% for item in data %}
+                <tr>
+                  <td class="border">{{ item.name }}</td>
+                  <td class="border">@{{ item.username }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+    <div>
+        <button style="font-size: 15px; padding: 10px 20px; background-color: red; color: white;" onclick="window.history.back()">Back</button>
+    </div>
+</body>
+</html>
