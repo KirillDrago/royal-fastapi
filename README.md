@@ -22,5 +22,6 @@ docker run -p 8000:8000 <image-name>
   - Form placeholder
   - Get app_id and app_hash
   - Paste them below
-- /search - Enter keyword for seearch list of chats
+- /search - Enter keyword for seearch list of chats(ex. Linux), then enter the number of the chat you want to parse(ex. 8). Result will be in HTML table.
+(Attention! App cant parse private chats)
 - /store-token - endpoint for create new token for other users
